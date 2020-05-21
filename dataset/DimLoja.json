@@ -1,0 +1,39 @@
+{
+	"name": "DimLoja",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SKLoja",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CodigoLoja",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NomeLoja",
+				"type": "varchar"
+			},
+			{
+				"name": "EnderecoLoja",
+				"type": "varchar"
+			},
+			{
+				"name": "StatusLoja",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DimLoja"
+		}
+	}
+}
