@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "MeuPrimeiroFluxo",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
