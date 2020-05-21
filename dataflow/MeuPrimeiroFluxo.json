@@ -13,8 +13,12 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
-			"script": "source(output(\n\t\tSKLoja as integer,\n\t\tCodigoLoja as integer,\n\t\tNomeLoja as string,\n\t\tEnderecoLoja as string,\n\t\tStatusLoja as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> FlowDimLoja"
+			"transformations": [
+				{
+					"name": "SurrogateKey1"
+				}
+			],
+			"script": "source(output(\n\t\tSKLoja as integer,\n\t\tCodigoLoja as integer,\n\t\tNomeLoja as string,\n\t\tEnderecoLoja as string,\n\t\tStatusLoja as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> FlowDimLoja\nFlowDimLoja keyGenerate(output({undefined} as long),\n\tstartAt: 1L) ~> SurrogateKey1"
 		}
 	}
 }
